@@ -10,7 +10,7 @@ It is the linked to the AWS Well Architected Lab: [LEVEL 200: PRICING MODEL ANAL
 module "aws_tf_pricing_model_analysis" {
   source = "github.com/awslabs/well-architected-lab200-aws_terraform_pricing_model_analysis"
   region = "eu-west-1"
-
+  bucket_name = "cost-unique-bucketname"
 }
 ```
 
@@ -26,7 +26,7 @@ If you wish to deploy to your linked account you will need to deploy a role to a
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | region | The region you wish this to be deployed into| string | `""` | yes
-| bucket\_name | A bucket will be created for your files. This must be unique | string | `""` | yes |
+| bucket\_name | A bucket will be created for your files. This must be unique and start with cost | string | `""` | yes |
 | pricing_db_name | Athena Database your table will be created in | string | `"pricing"` | no |
 | weekly_cron | Cloudwatch cron to pull the data | string | `"cron(07 1 ? * MON *)"` | no |
 | env | Environment prefix if needed| string | `""` | no 
