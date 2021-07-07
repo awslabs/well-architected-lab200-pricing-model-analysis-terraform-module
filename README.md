@@ -2,13 +2,19 @@
 
 You will create two pricing data sources, by using Lambda to download the AWS price list files (On Demand EC2 pricing, and Savings Plans rates from all regions) and extract the pricing components required. You can configure CloudWatch Events to periodically run these functions to ensure you have the most up to date pricing and the latest instances in your data.
 It is the linked to the AWS Well Architected Lab: [LEVEL 200: PRICING MODEL ANALYSIS](https://wellarchitectedlabs.com/cost/200_labs/200_pricing_model_analysis/)
-
+Please replacce with your region below.
 
 ## Usage
 
 ```
+
+provider "aws" {
+  region  = "eu-west-1"
+}
+
+
 module "aws_tf_pricing_model_analysis" {
-  source = "github.com/awslabs/well-architected-lab200-aws_terraform_pricing_model_analysis"
+  source = "github.com/awslabs/well-architected-lab200-pricing-model-analysis-terraform-module"
   region = "eu-west-1"
   bucket_name = "cost-unique-bucketname"
 }
