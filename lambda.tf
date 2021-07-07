@@ -12,8 +12,8 @@ resource "aws_lambda_function" "sp_od_pricing" {
   handler          = "sptool_odpricing_download.lambda_handler"
   source_code_hash = data.archive_file.sp_od_pricing_zip.output_base64sha256
   runtime          = "python3.8"
-  memory_size      = "4096"
-  timeout          = "150"
+  memory_size      = "7096"
+  timeout          = "350"
 
   environment {
     variables = {
@@ -57,8 +57,8 @@ resource "aws_lambda_function" "sp_sp_pricing" {
   handler          = "sptool_sppricing_download.lambda_handler"
   source_code_hash = data.archive_file.sp_sp_pricing_zip.output_base64sha256
   runtime          = "python3.8"
-  memory_size      = "4096"
-  timeout          = "150"
+  memory_size      = "7096"
+  timeout          = "350"
 
   environment {
     variables = {
