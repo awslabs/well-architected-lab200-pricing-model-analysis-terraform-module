@@ -58,7 +58,7 @@ def lambda_handler(event, context):
             s3 = boto3.resource('s3')
                 
             # Specify the local file, the bucket, and the folder and object name - you MUST have a folder and object name
-            s3.meta.client.upload_file('/tmp/od_pricedata.txt.gz', 'bucket_name', 'od_pricedata/od_pricedata.txt.gz')
+            s3.meta.client.upload_file('/tmp/od_pricedata.txt.gz', os.environ["BUCKET_NAME"], 'od_pricedata/od_pricedata.txt.gz')
         
             # Die if you cant get the pricing file     
                         
